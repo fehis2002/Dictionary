@@ -7,6 +7,7 @@ const setup = () => {
         for(let child of document.getElementById('content').children) {
             child.textContent = '';
         }
+        //displaying searched word
         displayWord();
     });
 }
@@ -58,6 +59,8 @@ const displayWord = async () => {
         definition.appendChild(document.createElement('br'));
         definition.appendChild(definitionText);
         definition.appendChild(document.createElement('br'));
+
+        span.classList.add('partOfSpeech')
     }
 
 }
@@ -65,7 +68,7 @@ const displayWord = async () => {
 const playPhoneticAudio = async (index) => {
 
     let data = await searchWord(document.getElementById('input').value);
-    new Audio(data.phonetics[index].audio).play();
+    await new Audio(data.phonetics[index].audio).play();
 }
 
 window.addEventListener('load', setup);
