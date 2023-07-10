@@ -56,3 +56,7 @@ body {
 #submitButton:hover {
     cursor: pointer;
 }
+
+#userInput {
+    text-align: center;
+}
